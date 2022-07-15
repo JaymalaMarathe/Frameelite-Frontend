@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import {mobile} from "../responsive";
+// import { Link } from '@mui/material';
+import {Button,Link} from '@mui/material';
 
 const Container = styled.div`
   width: 100vw;
@@ -20,12 +22,18 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
+  border-radius: 25px;
+  border: 2px ;
+ 
+  
   ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
   font-size: 24px;
   font-weight: 300;
+  text-align:center;
+  padding: 10px;
 `;
 
 const Form = styled.form`
@@ -40,34 +48,23 @@ const Input = styled.input`
   padding: 10px;
 `;
 
-const Button = styled.button`
-  width: 40%;
-  border: none;
-  padding: 15px 20px;
-  background-color: teal;
-  color: white;
-  cursor: pointer;
-  margin-bottom: 10px;
-`;
-
-const Link = styled.a`
-  margin: 5px 0px;
-  font-size: 12px;
-  text-decoration: underline;
-  cursor: pointer;
-`;
 
 const Login = () => {
   return (
     <Container>
       <Wrapper>
         <Title>SIGN IN</Title>
+        <br/>
+       <center>New User? <Link>CREATE A NEW ACCOUNT</Link></center> 
+        <br/>
         <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Button>LOGIN</Button>
-          <Link>FORGOT PASSWORD</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <b>Username</b>
+          <Input placeholder="Username" />
+          <b> Password</b>
+          <Input placeholder="Password" />
+          <Button>Sign In</Button>
+          <Link style={{textAlign: 'right'}}>Forgot Password?</Link>
+          
         </Form>
       </Wrapper>
     </Container>
